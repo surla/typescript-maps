@@ -1,8 +1,21 @@
 import { User } from './User';
 import { Company } from './Company';
 
-const user = new User();
-console.log(user);
+let delay = 4000;
 
-const company = new Company();
-console.log(company);
+setTimeout(
+    function initMap() {
+    
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 1,
+            center: {
+               lat: 0,
+               lng: 0
+            }
+        });
+    
+        if (google == undefined) {
+            initMap();
+            console.log("ran")
+        }
+    }, delay);
